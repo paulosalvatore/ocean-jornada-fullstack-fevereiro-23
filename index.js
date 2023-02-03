@@ -24,7 +24,9 @@ app.get("/item", function (req, res) {
 
 // Endpoint Read Single by ID -> [GET] /item/:id
 app.get("/item/:id", function (req, res) {
-  res.send("Read by ID");
+  const id = req.params.id;
+  const item = itens[id - 1];
+  res.send(item);
 });
 
 app.listen(3000);
