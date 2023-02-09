@@ -9,6 +9,8 @@ async function main() {
   // Conexão com o banco de dados
   console.log("Conectando com o banco de dados...");
   const client = await MongoClient.connect(DB_URL);
+  const db = client.db(DB_NAME);
+  const collection = db.collection("itens");
   console.log("Banco de dados conectado com sucesso!");
 
   const app = express();
@@ -33,8 +35,9 @@ async function main() {
   // CRUD -> Lista de informações
 
   // Endpoint Read All -> [GET] /item
-  app.get("/item", function (req, res) {
-    res.send(itens);
+  app.get("/item", async function (req, res) {
+    const documentos = await collection.find().toArray();
+    res.send(documentos);
   });
 
   // Endpoint Read Single by ID -> [GET] /item/:id
