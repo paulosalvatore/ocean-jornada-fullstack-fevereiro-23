@@ -1,5 +1,5 @@
 const express = require("express");
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 
 // localhost ou 127.0.0.1
 const DB_URL = "mongodb://127.0.0.1:27017";
@@ -41,9 +41,9 @@ async function main() {
   });
 
   // Endpoint Read Single by ID -> [GET] /item/:id
-  app.get("/item/:id", function (req, res) {
+  app.get("/item/:id", async function (req, res) {
     const id = req.params.id;
-    const item = itens[id - 1];
+    const item = await collection.findOne({ _id: new ObjectId(id) });
     res.send(item);
   });
 
