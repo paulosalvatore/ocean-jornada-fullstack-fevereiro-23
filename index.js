@@ -48,11 +48,11 @@ async function main() {
   });
 
   // Endpoint Create -> [POST] /item
-  app.post("/item", function (req, res) {
+  app.post("/item", async function (req, res) {
     // console.log(req.body);
     const item = req.body;
-    itens.push(item.nome);
-    res.send("Item criado com sucesso!");
+    await collection.insertOne(item);
+    res.send(item);
   });
 
   app.listen(3000);
