@@ -67,6 +67,12 @@ async function main() {
     res.send(body);
   });
 
+  // Endpoint Delete -> [DELETE] /item/:id
+  // Exercício:
+  // - pesquisar sobre a operação de remover itens
+  // - implementar o endpoint de delete
+  // - realizar a operação de excluir item
+
   app.listen(3000);
 }
 
