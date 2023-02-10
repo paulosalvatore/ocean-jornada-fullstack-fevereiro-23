@@ -2,7 +2,9 @@ const express = require("express");
 const { MongoClient, ObjectId } = require("mongodb");
 
 // localhost ou 127.0.0.1
-const DB_URL = "mongodb://127.0.0.1:27017";
+// const DB_URL = "mongodb://127.0.0.1:27017";
+const DB_URL =
+  "mongodb+srv://admin:fsdLuHLFo4KwOZ7N@cluster0.bndngam.mongodb.net";
 const DB_NAME = "ocean-bancodados-09-02-2023";
 
 async function main() {
