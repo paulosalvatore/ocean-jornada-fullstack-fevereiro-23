@@ -1,5 +1,6 @@
 import "./ReadAll.css";
 import Card from "../Card/Card";
+import { useEffect, useState } from "react";
 
 // Mock Items (exatamente a mesma estrutura que o back traria)
 // Isso facilita o trabalho aqui no Front, para conseguir estruturar
@@ -48,18 +49,31 @@ const itemsMock = [
 // inserido dentro delas
 
 function ReadAll() {
-  const items = [];
+  // useState retorna 2 coisas:
+  // 1: o valor do estado
+  // 2: a função que atualiza o valor do estado
+  //   const estadoItems = useState([]);
+  //   const items = estadoItems[0];
+  //   const setItems = estadoItems[1];
+  const [items, setItems] = useState([]);
 
+  // Realizar requisição para backend obtendo a lista de itens
   async function realizarRequisicao() {
-    // Realizar requisição para backend obtendo a lista de itens
     const url = "http://localhost:3000/item";
     const response = await fetch(url);
     const data = await response.json();
 
-    console.log(data);
+    setItems(data);
   }
 
-  realizarRequisicao();
+  // UseEffect
+  // 1: uma função que será executada
+  // 2: uma lista de dependências
+  useEffect(function () {
+    realizarRequisicao();
+  }, []);
+
+  //   console.log(67, items);
 
   return (
     <div className="ReadAll">
