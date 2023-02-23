@@ -18,11 +18,11 @@ import ReadAll from "./components/ReadAll/ReadAll";
  * 2. Essa propriedade `tags` deve conter uma lista de strings;
  * 3. Cada string representa uma tag daquele personagem;
  * 4. Crie um componente <Tag /> que recebe uma `string` como
- * propriedade (`props`) e exibia um <div> com o texto informado.
+ * propriedade (`props`) e exiba um <div> com o texto informado.
  * 5. Estilize o componente <Tag /> para ter uma cor de fundo que contraste com
  * o card.
  * 6. Utilizando o map, exiba dentro do componente <Card />, uma renderização
- * desse componente <Tag /> recém criado.
+ * desse componente <Tag /> recém criado para cada item da lista de tags.
  */
 
 function App() {

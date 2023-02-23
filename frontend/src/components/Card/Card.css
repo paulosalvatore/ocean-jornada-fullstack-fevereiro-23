@@ -13,3 +13,17 @@
   border-radius: 1rem;
   width: 200px;
 }
+
+.tag-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  background: white;
+  color: black;
+  padding: 0.25rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
