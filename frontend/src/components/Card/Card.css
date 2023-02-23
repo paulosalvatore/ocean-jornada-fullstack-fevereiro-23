@@ -3,6 +3,7 @@
   border-radius: 1rem;
   margin: 2rem;
   box-shadow: 3px 3px white;
+  width: 15rem;
 }
 
 .card > h1 {
@@ -16,6 +17,7 @@
 
 .tag-wrapper {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
@@ -26,4 +28,8 @@
   padding: 0.25rem 1rem;
   border-radius: 0.5rem;
   font-weight: bold;
+  max-width: 6rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

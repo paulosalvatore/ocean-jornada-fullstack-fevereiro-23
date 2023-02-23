@@ -14,6 +14,7 @@ function Card(props) {
       <div className="tag-wrapper">
         <div className="tag">Tag 1</div>
         <div className="tag">Tag 2</div>
+        <div className="tag">Tag 3</div>
       </div>
 
       <img src={item.imagemUrl} />
