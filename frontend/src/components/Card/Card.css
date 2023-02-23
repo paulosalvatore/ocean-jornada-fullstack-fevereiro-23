@@ -3,7 +3,7 @@
   border-radius: 1rem;
   margin: 2rem;
   box-shadow: 3px 3px white;
-  width: 15rem;
+  width: 20rem;
 }
 
 .card > h1 {
@@ -20,15 +20,17 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+  justify-content: center;
 }
 
 .tag {
+  font-size: 12px;
   background: white;
   color: black;
-  padding: 0.25rem 1rem;
+  padding: 0 0.75rem;
   border-radius: 0.5rem;
   font-weight: bold;
-  max-width: 6rem;
+  max-width: 8rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
