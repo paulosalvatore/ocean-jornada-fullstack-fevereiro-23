@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 // Mock Items (exatamente a mesma estrutura que o back traria)
 // Isso facilita o trabalho aqui no Front, para conseguir estruturar
 // comportamento, sem precisar depender do back para receber dados
-const items = [
+const itemsMock = [
   {
     _id: "63ee1e0b18f2b9a93da8435a",
     nome: "Rick Sanchez",
@@ -47,7 +47,15 @@ const items = [
 // Na verdade, as chaves representam que código JavaScript pode ser
 // inserido dentro delas
 
-function ReadAll() {
+async function ReadAll() {
+  const items = [];
+
+  // Realizar requisição para backend obtendo a lista de itens
+  const response = await fetch("https://api.github.com/users/github");
+  const data = await response.json();
+
+  console.log(data);
+
   return (
     <div className="ReadAll">
       {items.map(function (item) {
