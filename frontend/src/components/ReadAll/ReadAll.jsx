@@ -47,14 +47,19 @@ const itemsMock = [
 // Na verdade, as chaves representam que código JavaScript pode ser
 // inserido dentro delas
 
-async function ReadAll() {
+function ReadAll() {
   const items = [];
 
-  // Realizar requisição para backend obtendo a lista de itens
-  const response = await fetch("https://api.github.com/users/github");
-  const data = await response.json();
+  async function realizarRequisicao() {
+    // Realizar requisição para backend obtendo a lista de itens
+    const url = "http://localhost:3000/item";
+    const response = await fetch(url);
+    const data = await response.json();
 
-  console.log(data);
+    console.log(data);
+  }
+
+  realizarRequisicao();
 
   return (
     <div className="ReadAll">
