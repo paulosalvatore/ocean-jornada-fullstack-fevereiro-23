@@ -8,6 +8,7 @@ const DB_URL =
   "mongodb+srv://admin:fsdLuHLFo4KwOZ7N@cluster0.bndngam.mongodb.net";
 const DB_NAME = "ocean-bancodados-09-02-2023";
 
+
 async function main() {
   // Conexão com o banco de dados
   console.log("Conectando com o banco de dados...");
@@ -87,7 +88,12 @@ async function main() {
     res.send("Registro removido com sucesso!");
   });
 
-  app.listen(3000);
+  const port = process.env.PORT || 3000;
+  app.listen(port, function(){
+    console.lot("Servidor rodando na porta:  " + port);
+  });
 }
 
 main();
+
+
